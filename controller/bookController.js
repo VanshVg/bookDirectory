@@ -42,14 +42,15 @@ const showOne = async (req, resp) => {
 };
 const remove = async (req, resp) => {
   const { id } = req.params;
-  let deleteBook = bookModel.find({ isbn: id });
-  if (!deleteBook) {
+  let deleteBook = await bookModel.find({ isbn: id });
+  deleteBook = 1;
+  if (deleteBook.length == 0) {
     resp.status(404).send({
       message: "This book doesn't exist",
     });
     console.log("This book doesn't exist");
   } else {
-    let data = await bookModel.deleteOne(deleteBook);
+    let data = await bookModel.deleteOne({ isbn: id });
     resp.status(200).send({
       message: "Book successfully removed",
     });
