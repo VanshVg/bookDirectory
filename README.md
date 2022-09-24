@@ -17,5 +17,5 @@ To install dependencies/packages
 To deploy this project
 
 ```bash
-  nodemon index.js
+  npm run dev
 ```
