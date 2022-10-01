@@ -1,5 +1,5 @@
 
-# Book Birectory
+# Book Directory
 
 Endpoints of Book Directory websites have been created using CRUD operations with the use of Node and Express.
 
